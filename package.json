@@ -6,7 +6,7 @@
     "transforms"
   ],
   "scripts": {
-    "build": "babel modules/ -d transforms",
+    "build": "rimraf transforms && babel modules/ -d transforms",
     "lint": "eslint modules",
     "prepublish": "npm run build",
     "test": "npm run lint"
@@ -33,6 +33,7 @@
     "babel": "^5.8.34",
     "babel-eslint": "^4.1.6",
     "eslint": "^1.10.3",
-    "eslint-config-rackt": "^1.1.1"
+    "eslint-config-rackt": "^1.1.1",
+    "rimraf": "^2.4.4"
   }
 }
