@@ -1,8 +1,6 @@
 import parsePath from 'history/lib/parsePath'
 
-function replace(source, api, methodName) {
-  const j = api.jscodeshift
-
+function replace(source, j, methodName) {
   return j(source)
     .find(j.CallExpression, {
       callee: { property: { name: methodName } } }
@@ -41,10 +39,10 @@ function replace(source, api, methodName) {
     .toSource()
 }
 
-export default (file, api) => {
+export default (file, { jscodeshift: j }) => {
   let { source } = file
-  source = replace(source, api, 'createPath')
-  source = replace(source, api, 'createHref')
+  source = replace(source, j, 'createPath')
+  source = replace(source, j, 'createHref')
 
   return source
 }

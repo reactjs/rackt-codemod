@@ -1,8 +1,6 @@
 import parsePath from 'history/lib/parsePath'
 
-function replace(source, api, flavor) {
-  const j = api.jscodeshift
-
+function replace(source, j, flavor) {
   return j(source)
     .find(j.CallExpression, {
       callee: { property: { name: `${flavor}State` } } }
@@ -48,10 +46,10 @@ function replace(source, api, flavor) {
     .toSource()
 }
 
-export default (file, api) => {
+export default (file, { jscodeshift: j }) => {
   let { source } = file
-  source = replace(source, api, 'push')
-  source = replace(source, api, 'replace')
+  source = replace(source, j, 'push')
+  source = replace(source, j, 'replace')
 
   return source
 }
