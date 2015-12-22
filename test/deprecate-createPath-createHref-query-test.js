@@ -1,4 +1,2 @@
-import { createHistory, useQueries } from 'history';
+history.createPath('/foo/bar', { foo: 'bar' });
 
-const history = useQueries(createHistory)();
-history.createPath('/foo/bar');
