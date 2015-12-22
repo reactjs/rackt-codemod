@@ -7,3 +7,4 @@ class MyComponent extends React.Component {
 }
 
 MyComponent.contextTypes = { history: PropTypes.history };
+
