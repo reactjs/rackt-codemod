@@ -1,5 +1,5 @@
 # rackt-codemod [![npm][npm-badge]][npm]
-[Codemod](https://github.com/facebook/jscodeshift) scripts for [Rackt](http://rackt.org/) libraries.
+[Codemod](https://github.com/facebook/jscodeshift) scripts for Rackt libraries.
 
 [![Discord][discord-badge]][discord]
 
